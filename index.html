@@ -1,0 +1,184 @@
+<!doctype html>
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <title>{% block title %}{% endblock %}WeatherPy II WebPage</title>
+  <div class="html_head"> {% block html_head %} {% endblock %} </div>
+  <p></p>
+
+</head>
+
+<!-- Custom styles for this template -->
+<link href="sticky-footer-navbar.css" rel="stylesheet">
+
+<body class="d-flex flex-column h-5%0">
+  <header>
+    <!-- NAVBAR -->
+    <div class="container bg-primary" id='navbar'>
+      <div class="row"></div>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand bg-info font-weight-bold text-dark rounded-lg " href="#"> Bad Attitudes vs
+          Latitudes ° </a>
+        <button class="navbar-toggler bg-secondary" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://hawkeye3d.com">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item text-primary" href="Views/TempComparison.html">Temperature</a>
+                <a class="dropdown-item text-primary" href="Views/HumidityComparison.html">Humidity</a>
+                <a class="dropdown-item text-primary" href="Views/CloudinessComparison.html">Cloudiness</a>
+                <a class="dropdown-item text-primary" href="Views/WindSpeedComparison.html">Wind
+                  Speed</a>
+                <a class="dropdown-item text-primary" href="Views/WeatherPy.html">WeatherPy Jupyter View</a>
+
+                <a class="dropdown-item text-primary" href=Views/DataView.html">Data View</a> </div> </li> </ul> </div>
+                  </div> </header> <div class="container">
+
+                  <body>
+                    <footer class="footer mt-auto py-3">
+                      <p class=""></p>
+                      <div class="row"></div>
+
+                      <div class="row">
+                        <h1>WeatherPy Two</h1>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="row">
+                            <h3 class="row justify-content-center">WeatherPy Comparison of Two Methods </h3>
+                            <h3 class="row justify-content-center">Trilogy's Method vs. My Method</h3>
+                          </div>
+                          <hr class="text-dark">
+                          <p class="text-center text-lg">Temperature Plot</p>
+                          <img src="Resources\assets\images\Fig1.png" width=auto vspace=5 ALIGN='left'
+                            alt="Temp vs Latitude" class="border border-primary rounded-lg">
+                          <img src="Resources\assets\images\knightonhorse.jpg" width=40% vspace=5% hspace=5%
+                            ALIGN='left' alt="Knight">
+
+
+
+                          <p class="text-left font-weight-bold text-muted bg-light rounded-lg">Instead of replicating
+                            the Weatherpy solution that Trilogy promotes for this homework assignment, I decided to show
+                            the comparison between their solution to the problem and my solution to the problem. I will
+                            demonstrate my understanding of the required web skills at the same time. This may make it
+                            more challenging for the grader, but hopefully the content will be worth the effort.
+                            First, the databases. One of the main goals of the Weatherpy assignment is to use an
+                            established API. The API, ‘api.openweathermap.org’ is the one selected for the Weatherpy
+                            assignment. OpenWeather is a commercial weather data management company that provides access
+                            to weather data of all sorts. The second source of data recommended to use is the ciyipy
+                            library, that has a github pip install. This was selected because it has a function which
+                            finds the nearest city in its database (Maxmind):
+                            www.maxmind.com/en/free-world-cities-database) to a geographical coordinate.
+                            The weatherpy homework suggest randomizing lats and longs and then using those lats and
+                            longs to feed the citypy function to return a city name, which we would then use to find a
+                            city in the openweathermap API to retrieve the weather data. There are all kinds of issues
+                            with this approach to getting the weather data. First, the list of cities in citipy are not
+                            coherent with the list of cities in openweather. There are spelling differences, for
+                            example, and two entirely different lists. Second, the provided lat-long randomizer
+                            randomizes the wrong thing, and then uses the wrong process. The idea of using citipy to
+                            find the nearest city from a lat and long is great if I am looking for the nearest
+                            restaurant. Using it to find the nearest city so we can ascertain measurements for our lat
+                            and long is just wrong. If we had extremely fine granularity in our measurement system, such
+                            exists in a city itself, this would be just fine, but we are talking about the world.
+                            Seventy percent of the world is covered by water which means that 70% of the world has no
+                            measurement stations in openweatherorg. What happens with Trilogy’s solution is that 70% of
+                            our randomly selected points are in the oceans of the world, and the nearest cities are all
+                            coastal cities, not to mention that the nearest city to a point in the ocean could be
+                            thousands of miles north or south.
+                            A better approach to this problem is the one I did in the weatherpy homework, and I will
+                            demonstrate the differences in this web assignment. First, I recognized that a coherent
+                            database of cities for the openweathermap API is provided in their bulk data. They maintain
+                            a list of all the weather stations, approximately 23000, that are queried every few minutes.
+                            I downloaded this database and use it to randomly select the cities using the
+                            ‘df.sample(number)’ function provided by Pandas. Now, I have a list of measurements that are
+                            consistent with their actual location on Earth. I also have a coherent list of cities with a
+                            99.2% find rate, so my efficiency improves greatly. I think the citipi has about 1600 cities
+                            and find rate was atrocious.
+
+                          </p>
+
+                        </div>
+
+                        <div class="col lg-6">
+                          <div class="container bg-dark rounded-lg"></div>
+                          <div class="col bg-light rounded-lg">
+                            <div class="row">
+                              <div class="col">
+                                <div class="row">
+                                  <h3 class="bg-dark text-white rounded-lg ">Graphs</h3>
+                          
+                                  <hr class="text-dark">
+                                </div>
+                                <hr class="text-dark">
+                                <div class="container"> 
+                                   
+                                  <div class="  col col-md col-sm">
+                                    <img src="Resources\assets\images\Fig1.png" width=auto vspace=5% hspace=5% ALIGN='left' alt="1"
+                                      class="border border-primary rounded-lg">
+                                    <img src="Resources\assets\images\Fig2.png" width=auto vspace=5% hspace=5% ALIGN='left' alt="2"
+                                      class="border border-primary rounded-lg">
+                                  </div>
+                          
+                          
+                                  <div class=" col col-md col-sm">
+                                    <img src="Resources\assets\images\Fig3.png" width=auto vspace=5% hspace=5% ALIGN='left' alt="3"
+                                      class="border border-primary rounded-lg">
+                                    <img src="Resources\assets\images\Fig4.png" width=auto vspace=5% hspace=5% ALIGN='left' alt="3"
+                                      class="border border-primary rounded-lg">
+                                  </div>
+                              
+                          </div>
+                               
+                          
+                        
+                            
+
+
+                        </div>
+                      
+
+              </div>
+
+
+              <!-- Optional JavaScript -->
+              <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+              <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+              <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
+
+</body>
+<!-- End of Container for Body -->
+</div>
+
+</html>

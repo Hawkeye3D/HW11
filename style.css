@@ -1,0 +1,12 @@
+html {
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: 30;
+    line-height: normal;
+    font-family: Verdana,sans-serif;
+  }
+  p {
+    background: inherit;
+    font-size:25;
+  }
